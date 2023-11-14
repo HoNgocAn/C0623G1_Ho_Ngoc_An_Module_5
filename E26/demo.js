@@ -38,10 +38,30 @@ console.log(firstFind + " là phẩn tử đầu tiên trong mảng lớn hơn 3
 
 // 6. Sử dụng destructuring với rest parameter để trích xuất phần tử đầu tiên vào biến "first" và các phần tử còn lại vào một mảng mới "rest".
 
+let [first,...rest]= newArr;
+console.log("Phần tử đầu tiên là "  + first)
+console.log("Mảng mới là " + rest)
 
 // 7. Sử dụng destructuring để trích xuất các giá trị "name" và "age" từ một mảng chứa các đối tượng "person".
+let person = {
+    name: "Lê Văn A",
+    age: 30
+}
+let{name,age} = person;
+console.log(name, age);
 
 
 // 8. Sử dụng Rest parameter và Spread operator để tạo một hàm nhận vào danh sách các số và trả về tổng của chúng.
+
+const sumArray = ([...arrayNumber]) => {
+    return arrayNumber.reduce((total,num) => total + num);
+}
+console.log( "Tổng của mảng là " + sumArray([1,2,3,4,5]));
+
 // 9. Sử dụng Rest parameter để nhận vào một danh sách tên và trả về chuỗi định dạng "Welcome, [tên1], [tên2], [tên3], ..." cho tất cả các tên.
+
+const stringName = (...names) => {
+    return names;
+}
+console.log("Welcome " + stringName ('A', 'B', 'C'));
 // 10. Tạo một đối tượng "book" với thuộc tính "title", "author" và "pages" bằng cách sử dụng Enhanced object literals. Đối tượng "book" cũng có phương thức "displayInfo" để in ra thông tin về sách.
