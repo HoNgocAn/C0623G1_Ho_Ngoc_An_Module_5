@@ -6,7 +6,7 @@ const arr1 = arr.map((number) => {
         return number;
     }
 })
-const newArr = arr.filter((item) => item >5);
+const newArr = arr1.filter((item) => item >5);
 console.log("Mảng mới là " + newArr);
 
 // 2. Sử dụng arrow function và reduce để tính tổng các phần tử trong mảng.
