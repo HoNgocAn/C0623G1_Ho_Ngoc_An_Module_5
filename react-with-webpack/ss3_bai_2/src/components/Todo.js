@@ -12,7 +12,7 @@ class ToDo extends Component {
     handleChange = (event) => {
         this.setState({item: event.target.value});
     }
-    handleAddItem = () => {
+    handleAddJob = () => {
         this.setState(
             {
                 ...this.state,
@@ -27,13 +27,12 @@ class ToDo extends Component {
                 <div className="mb-3">
                     <label htmlFor="inputToDo" className="form-label">Nhập công việc </label>
                     <br/>
-                    <input type="text" className="form-control" id="inputToDo"
-                           placeholder="Nhập công việc" onChange={this.handleChange}/>
+                    <input type="text" className="form-control" id="inputToDo" onChange={this.handleChange}/>
                 </div>
-                <button className="btn btn-primary" onClick={this.handleAddItem}>Thêm công việc</button>
+                <button className="btn btn-warning" onClick={this.handleAddJob}>Thêm công việc</button>
             </div>
             <div className="container">
-                <table className="table">
+                <table className="table-list">
                     <thead>
                     <tr>
                         <th scope="col">STT</th>
