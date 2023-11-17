@@ -4,9 +4,9 @@ import Student from "./studentInfoComponent/Student";
 
 function App() {
   return (
-      <>
-        <Student/>
-      </>
+      <div className="App">
+          <Student/>
+      </div>
   );
 }
 

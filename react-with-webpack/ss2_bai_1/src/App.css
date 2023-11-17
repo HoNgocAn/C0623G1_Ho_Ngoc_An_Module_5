@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+.table-student{
+  text-align: center;
+  width: 100%;
+}

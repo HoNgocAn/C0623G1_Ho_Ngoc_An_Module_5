@@ -4,19 +4,38 @@ class ToDo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            list: ["Kỹ sư","Bác sĩ"],
-            item: ""
+            list: [
+                {
+                id :1,
+                name : "Kỹ sư"
+            },
+                {
+                id :2,
+                name : "Bác sĩ"
+                }
+            ],
+            item: {}
         };
     }
 
     handleChange = (event) => {
-        this.setState({item: event.target.value});
+        console.log(event.target.value)
+        this.setState(
+            {
+                item: {
+                    name: event.target.value
+                }
+            }
+        );
     }
     handleAddJob = () => {
+        const newId = this.state.list.length+1;
         this.setState(
             {
                 ...this.state,
-                list: [...this.state.list, this.state.item]
+                list: [...this.state.list, {
+                    ...this.state.item, id:newId
+                }]
             })
     }
 
@@ -40,10 +59,10 @@ class ToDo extends Component {
                     </tr>
                     </thead>
                     <tbody>
-                    {this.state.list.map((value, index)=> (
-                        <tr>
+                    {this.state.list.map((job, index)=> (
+                        <tr key={job.id}>
                             <td>{index+1}</td>
-                            <td>{value}</td>
+                            <td>{job.name}</td>
                         </tr>
                     ))}
                     </tbody>
@@ -52,5 +71,4 @@ class ToDo extends Component {
         </>
     }
 }
-
 export default ToDo;
