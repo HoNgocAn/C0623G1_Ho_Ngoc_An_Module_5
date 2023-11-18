@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+<div class="container">
+    <h2>Danh sách khách hàng</h2><br>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">STT</th>
+            <th scope="col">Họ tên</th>
+            <th scope="col">Ngày sinh</th>
+            <th scope="col">Giới tính</th>
+            <th scope="col">Số ĐDCN</th>
+            <th scope="col">Số điện thoại</th>
+            <th scope="col">Email</th>
+            <th scope="col">Loại khách</th>
+            <th scope="col">Địa chỉ</th>
+            <th scope="col" colspan="2">Thao tác</th>
+        </tr>
+        </thead>
+        <tbody class="table-group-divider">
+        <tr>
+            <th scope="row"></th>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                <button type="button" class="btn btn-primary" onclick="editService()">Sửa</button>
+                <button type="button" class="btn btn-danger" onclick="">Xóa</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    function editService(){
+        location.assign("http://localhost:63342/casestudy/%20display/updateCustomer.html?_ijt=refobcn6cdg62dseg8ktu0hm0d&_ij_reload=RELOAD_ON_SAVE");
+    }
+</script>
+</body>
+</html>
