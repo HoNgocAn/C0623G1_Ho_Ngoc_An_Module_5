@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6a10a7b6-fb77-4be8-9fcc-47ff0f2ec2f1" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../ display/createContract.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/createContract.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/createCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/createCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/createService.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/createService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/header.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/header.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/listContract.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/listContract.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/listCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/listCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/listService.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/listService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/navigation.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/navigation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/updateCustomer.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/updateCustomer.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ display/updateService.html" beforeDir="false" afterPath="$PROJECT_DIR$/../ display/updateService.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/ss3_bai_2/src/components/Todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/ss3_bai_2/src/components/Todo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/thuc_hanh/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/thuc_hanh/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../react-with-webpack/thuc_hanh/src/components/Counter.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../react-with-webpack/thuc_hanh/src/components/Welcome.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2YOgqJJ6p2vKSIIxOjgwWSyaraT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_5/C0623G1_Ho_Ngoc_An_Module_5/casestudy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6a10a7b6-fb77-4be8-9fcc-47ff0f2ec2f1" name="Changes" comment="" />
+      <created>1700402228920</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700402228920</updated>
+      <workItem from="1700402230088" duration="11000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
