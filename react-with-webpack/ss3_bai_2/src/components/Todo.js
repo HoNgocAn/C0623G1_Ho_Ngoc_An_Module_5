@@ -44,7 +44,7 @@ class ToDo extends Component {
             <div className="container">
                 <h2>TO DO APP</h2>
                 <div className="mb-3">
-                    <label htmlFor="inputToDo" className="form-label">Nhập công việc </label>
+                    <label htmlFor="inputToDo"  className="form-label">Nhập công việc </label>
                     <br/>
                     <input type="text" className="form-control" id="inputToDo" onChange={this.handleChange}/>
                 </div>

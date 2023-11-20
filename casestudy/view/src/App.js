@@ -15,11 +15,11 @@ function App() {
   return (
       <>
           {/*<Header/>*/}
-          <Navigation/>
+          {/*<Navigation/>*/}
       {/*<ListService/>*/}
       {/*<EditService/>*/}
       {/*<CreateService/>*/}
-      {/*<ListCustomer/>*/}
+      <ListCustomer/>
       {/*<CreateCustomer/>*/}
       {/*<EditCustomer/>*/}
       {/*    <Footer/>*/}

@@ -24,9 +24,21 @@ function ListCustomer(){
             typeGuest: "Member",
             address: "Hà Nội",
         },
+        {
+            id: 3,
+            name: "Trần Thị C",
+            birthday: "01/01/2002",
+            gender: "Nữ",
+            idCard: "047443558786",
+            numberPhone: "0935776354",
+            email: "ttc@123",
+            typeGuest: "Diamond",
+            address: "Sài Gòn",
+        },
     ];
     return (
         <>
+        <div className="container">
             <h2>Danh sách khách hàng</h2>
             <table className="table">
                 <thead>
@@ -63,6 +75,7 @@ function ListCustomer(){
                 )};
                 </tbody>
             </table>
+        </div>
         </>
     )
 }

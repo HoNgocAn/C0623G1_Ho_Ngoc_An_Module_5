@@ -1,29 +1,14 @@
-import {useState} from "react";
+import React, {Component} from 'react';
 
-function Counter(){
-    let [ count, setCount] = useState(0)
-    let [ countA, setCountA] = useState(0)
-    const handleClick = () =>{
-        const newValue = count + 1;
-        setCount(newValue)
-    };
-    const handleClickDouble = () =>{
-        const newValue = countA+2;
-        setCountA(newValue)
-    };
-    return (
-        <div>
-            Count {count}
-            <div>
-                <button onClick = {handleClick}>Add1</button>
-            </div>
+class Welcome extends Component {
 
-            Count {countA}
-            <div>
-                <button onClick = {handleClickDouble}>Add2</button>
-            </div>
-        </div>
+    componentWillUnmount() {
+        alert('The component is going to be unmounted');
+    }
 
-    );
+    render() {
+        return <h1>Hello Word!!!</h1>;
+    }
 }
-export default Counter;
+
+export default Welcome;

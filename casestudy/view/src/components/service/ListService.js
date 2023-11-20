@@ -18,6 +18,7 @@ function ListService() {
 
     return (
         <>
+            <div className="container ">
             <h2>Danh sách dịch vụ</h2>
             <table className="table">
                 <thead>
@@ -88,6 +89,7 @@ function ListService() {
                 </tr>
                 </tbody>
             </table>
+        </div>
         </>
     );
 }

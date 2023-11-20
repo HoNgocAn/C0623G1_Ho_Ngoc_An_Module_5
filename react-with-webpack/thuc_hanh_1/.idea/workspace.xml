@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="71faf82b-17d2-41cf-b135-18e7f6a1f205" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../casestudy/view/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../casestudy/view/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casestudy/view/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../casestudy/view/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casestudy/view/src/components/customer/ListCustomer.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../casestudy/view/src/components/customer/ListCustomer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../casestudy/view/src/components/service/EditService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../../casestudy/view/src/components/service/EditService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../ss3_bai_2/src/components/Todo.js" beforeDir="false" afterPath="$PROJECT_DIR$/../ss3_bai_2/src/components/Todo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/components/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/components/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../thuc_hanh/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/../thuc_hanh/src/setupTests.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2YQRIqAbfGrOlV2aTORkuNstwPd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/C0623G1_Ho_Ngoc_An_Module_5/C0623G1_Ho_Ngoc_An_Module_5/casestudy",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="71faf82b-17d2-41cf-b135-18e7f6a1f205" name="Changes" comment="" />
+      <created>1700455739361</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700455739361</updated>
+      <workItem from="1700455741308" duration="17000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>
