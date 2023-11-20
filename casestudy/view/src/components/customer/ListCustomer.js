@@ -57,7 +57,7 @@ function ListCustomer(){
                 </thead>
                 <tbody className="table-group-divider">
                 {customer.map((item,index) =>
-                <tr>
+                <tr key={item.id}>
                     <th scope="row">{index+1}</th>
                     <td>{item.name}</td>
                     <td>{item.birthday}</td>

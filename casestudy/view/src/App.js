@@ -9,6 +9,8 @@ import EditCustomer from "./components/customer/EditCustomer";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Navigation from "./components/Navigation";
+import CreateContract from "./components/contract/CreateContract";
+import ListContract from "./components/contract/ListContract";
 
 
 function App() {
@@ -19,11 +21,13 @@ function App() {
       {/*<ListService/>*/}
       {/*<EditService/>*/}
       {/*<CreateService/>*/}
-      <ListCustomer/>
+      {/*<ListCustomer/>*/}
       {/*<CreateCustomer/>*/}
       {/*<EditCustomer/>*/}
       {/*    <Footer/>*/}
-      </>
+      {/*<CreateContract/>*/}
+        <ListContract/>
+       </>
   )
 }
 
