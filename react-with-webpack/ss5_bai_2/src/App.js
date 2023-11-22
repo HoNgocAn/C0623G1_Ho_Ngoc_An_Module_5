@@ -255,18 +255,18 @@ function App() {
                         </div>
                         <div>
                             <h3>Trong vong 14 ngày qua anh/chị có xuất hiện triệu chứng nào sau đay không</h3>
-                            <input name="symptom" type="checkbox"/>Sốt<br/>
-                            <input name="symptom" type="checkbox"/>Ho<br/>
-                            <input name="symptom" type="checkbox"/>Khó thở<br/>
-                            <input name="symptom" type="checkbox"/>Viêm phổi<br/>
-                            <input name="symptom" type="checkbox"/>Đau họng<br/>
-                            <input name="symptom" type="checkbox"/>Mệt mỏi<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange}/>Sốt<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange}/>Ho<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange}/>Khó thở<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange}/>Viêm phổi<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange} />Đau họng<br/>
+                            <input name="symptom" type="checkbox" onChange={handleChange}/>Mệt mỏi<br/>
                         </div>
                         <div>
                             <h3>Trong vong 14 ngày qua anh/chị có tiếp xúc với</h3>
-                            <input name="contact" type="checkbox"/>Người bệnh hoặc nghi ngờ mắc bệnh COVID-19<br/>
-                            <input name="contact" type="checkbox"/>Người từ nước có bệnh COVID-19<br/>
-                            <input name="contact" type="checkbox"/>Người có biểu hiện sốt, ho, khó thở<br/>
+                            <input name="contact" type="checkbox" onChange={handleChange}/>Người bệnh hoặc nghi ngờ mắc bệnh COVID-19<br/>
+                            <input name="contact" type="checkbox" onChange={handleChange}/>Người từ nước có bệnh COVID-19<br/>
+                            <input name="contact" type="checkbox" onChange={handleChange}/>Người có biểu hiện sốt, ho, khó thở<br/>
                         </div>
                         <br/>
 
