@@ -11,7 +11,7 @@ class Book extends Component {
 
     componentDidMount() {
         axios
-            .get("https://my-json-server.typicode.com/codegym-vn/mock-api-books/books")
+            .get("http://localhost:8080/book")
             .then(res => {
                 this.setState({ books: res.data });
             })
@@ -26,6 +26,7 @@ class Book extends Component {
         return (
             <div className="container">
                 <h1>List Book</h1>
+                <button type="button" className="btn btn-success">Add new Book</button>
                 <table className="table mt-3">
                     <thead>
                         <th scope="col">Tittle</th>

@@ -5,13 +5,17 @@ class TodoList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: []
+            todos: [],
+            todo:{
+                id: "",
+                title: "",
+            }
         };
     }
 
     componentDidMount() {
         axios
-            .get("https://my-json-server.typicode.com/codegym-vn/mock-api-books/books")
+            .get("http://localhost:8080/todoList")
             .then(res => {
                 this.setState({ todos: res.data });
             })
@@ -20,16 +24,39 @@ class TodoList extends Component {
             });
     }
 
+    handleAdd=()=>{
+        this.setState(
+            {
+                todos:[
+                    ...this.state.todos,
+                    this.state.todo
+                ],
+                todo: {
+                    id: "",
+                    title: "",
+                }
+            }
+        )
+    }
+
+    handleTodo =(e)=>{
+        this.setState(
+            {
+                todo:{
+                    id: this.state.todos.length+1,
+                    title: e
+                }
+            }
+        )
+    }
 
     render() {
         const { todos } = this.state;
         return (
             <div>
                 <h1>TodoList</h1>
-                <form>
-                    <input type="text"/>
-                    <button type="submit">Submit</button>
-                </form>
+                    <input type="text" onChange={(e)=>this.handleTodo(e.target.value)} value={this.state.todo.title}/>
+                    <button type="button" onClick={this.handleAdd}>Submit</button>
                 <ul>
                     {todos.map(todo => (
                         <li key={todo.id}> {todo.title} </li>
