@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Bret",
+      "email": "bret@123",
+      "website": "hildegard.org"
+    },
+    {
+      "id": 2,
+      "name": "Antonette",
+      "email": "antoette@123",
+      "website": "anastasia.net"
+    }
+  ]
+}

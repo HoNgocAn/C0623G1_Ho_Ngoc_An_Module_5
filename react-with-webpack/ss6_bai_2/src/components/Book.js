@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Routes, Route, Link } from "react-router-dom";
+import CreateBook from "./CreateBook";
+import EditBook from "./EditBook";
 
 class Book extends Component {
     constructor(props) {
@@ -26,7 +29,8 @@ class Book extends Component {
         return (
             <div className="container">
                 <h1>List Book</h1>
-                <button type="button" className="btn btn-success">Add new Book</button>
+
+                <button type="button" className="btn btn-success"><Link to="/createBook">Add new book</Link></button>
                 <table className="table mt-3">
                     <thead>
                         <th scope="col">Tittle</th>
@@ -39,7 +43,7 @@ class Book extends Component {
                             <td>{book.title}</td>
                             <td>{book.quantity}</td>
                             <td>
-                                <button className="btn btn-primary">Edit</button>
+                                <button><Link to="/editBook">Edit</Link></button>
 
                                 <button className="btn btn-danger">Delete</button>
                             </td>
@@ -47,6 +51,11 @@ class Book extends Component {
                     )}
                     </tbody>
                 </table>
+                <hr />
+                <Routes>
+                    <Route path="/createBook" element={<CreateBook/>} />
+                    <Route path="/editBook" element={<EditBook/>} />
+                </Routes>
             </div>
         );
     }

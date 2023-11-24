@@ -1,68 +1,177 @@
-import React from "react";
-import {Field} from "formik";
+import React, {useState} from "react";
+import {Formik} from "formik";
 
 
 function EditService() {
-    return (
-        <>
-            <h3 className="mt-3">Cập nhật dịch vụ</h3>
-            <form>
-                <div className="mb-3">
-                    <label className="form-label">Tên dịch vụ <span style="color: red;">(*)</span></label>
-                    <select className="form-select" aria-label="Default select example">
-                        <option selected>Chọn dịch vụ</option>
-                        <option value="1">Villa</option>
-                        <option value="2">House</option>
-                        <option value="3">Room</option>
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputAria" className="form-label">Diện tích sử dụng<span
-                        style="color: red;">(*)</span></label>
-                    <Field type="text" className="form-control" id="inputAria"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputExpense" className="form-label">Chí phí thuê</label>
-                    <Field type="text" className="form-control" id="inputExpense"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputPerson" className="form-label">Số lượng người tối đa</label>
-                    <Field type="text" className="form-control" id="inputPerson"/>
-                </div>
-                <div className="mb-3">
-                    <label className="form-label">Kiểu thuê <span style="color: red;">(*)</span></label>
-                    <select className="form-select" aria-label="Default select example">
-                        <option selected>Chọn kiểu thuê</option>
-                        <option value="1">Năm</option>
-                        <option value="2">Tháng</option>
-                        <option value="3">Ngày</option>
-                    </select>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputRoomStar" className="form-label">Tiêu chuẩn phòng<span
-                        style="color: red;">(*)</span></label>
-                    <Field type="text" className="form-control" id="inputRoomStar"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputTool" className="form-label">Tiện ích khác</label>
-                    <Field type="text" className="form-control" id="inputTool"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputPool" className="form-label">Diện tích hồ bơi</label>
-                    <Field type="text" className="form-control" id="inputPool"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputFloor" className="form-label">Số tâng</label>
-                    <Field type="text" className="form-control" id="inputFloor"/>
-                </div>
-                <div className="mb-3">
-                    <label htmlFor="inputServiceFree" className="form-label">Dịch vụ miễn phí đi kèm</label>
-                    <Field type="text" className="form-control" id="inputServiceFree"/>
-                </div>
-                <button type="submit" className="btn btn-primary">Xác nhận</button>
-            </form>
-        </>
+    const [form, setForm] = useState({})
 
+    function handleChange(event) {
+        setForm({
+            ...form,
+            [event.target.name]: event.target.value
+        });
+    }
+
+    function handleValidate() {
+        const errors = {};
+        if (!form.name) {
+            errors.name = "Không được để trống";
+        }
+        if (!form.area) {
+            errors.area = "Không được để trống";
+        }
+        if (!form.expensive) {
+            errors.expensive = "Không được để trống";
+        }
+        if (!form.person) {
+            errors.person = "Không được để trống";
+        }
+        if (!form.rentalType) {
+            errors.rentalType = "Không được để trống";
+        }
+        return errors
+    }
+
+    function handleSubmit() {
+        alert("Đã thêm mới thành công")
+    }
+
+    return (
+        <div>
+            <h1>Chỉnh sửa dịch vụ</h1>
+            <Formik
+                initialValues={form}
+                validate={handleValidate}
+                onSubmit={handleSubmit}>
+                {({errors, handleSubmit}) => (
+                    <form onSubmit={handleSubmit}>
+                        <div
+                            className={`custom-input ${
+                                errors.name ? "custom-input-error" : ""
+                            }`}
+                        >
+                            <label>Tên</label><br></br>
+                            <input
+                                type="text"
+                                name="name"
+                                value={form.name || ""}
+                                onChange={handleChange}
+                            />
+                            <p className="error">{errors.name}</p>
+                        </div>
+
+                        <div
+                            className={`custom-input ${
+                                errors.area ? "custom-input-error" : ""
+                            }`}
+                        >
+                            <label>Diện tích sử dụng</label><br></br>
+                            <input
+                                type="text"
+                                name="area"
+                                value={form.area || ""}
+                                onChange={handleChange}
+                            />
+                            <p className="error">{errors.area}</p>
+                        </div>
+
+                        <div
+                            className={`custom-input ${
+                                errors.expensive ? "custom-input-error" : ""
+                            }`}
+                        >
+                            <label>Chi phí thuê</label><br></br>
+                            <input
+                                type="text"
+                                name="expensive"
+                                value={form.expensive || ""}
+                                onChange={handleChange}
+                            />
+                            <p className="error">{errors.expensive}</p>
+                        </div>
+
+                        <div
+                            className={`custom-input ${
+                                errors.person ? "custom-input-error" : ""
+                            }`}
+                        >
+                            <label>Số lượng người tối đa</label><br></br>
+                            <input
+                                type="number"
+                                name="person"
+                                value={form.person || ""}
+                                onChange={handleChange}
+                            />
+                            <p className="error">{errors.person}</p>
+                        </div>
+
+                        <div
+                            className={`custom-input ${
+                                errors.rentalType ? "custom-input-error" : ""
+                            }`}
+                        >
+                            <label>Kiểu thuê</label><br></br>
+                            <input
+                                type="text"
+                                name="rentalType"
+                                value={form.rentalType || ""}
+                                onChange={handleChange}
+                            />
+                            <p className="error">{errors.rentalType}</p>
+                        </div>
+
+                        <div className="custom-input">
+                            <label>Tiêu chuẩn phòng</label><br/>
+                            <input
+                                type="text"
+                                value="roomStar"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className="custom-input">
+                            <label>Mô tả tiện nghi khác</label><br/>
+                            <input
+                                type="text"
+                                value="tool"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className="custom-input">
+                            <label>Diện tích hồ bơi</label><br/>
+                            <input
+                                type="text"
+                                value="pool"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className="custom-input">
+                            <label>Số tầng</label><br/>
+                            <input
+                                type="number"
+                                value="floor"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+                        <div className="custom-input">
+                            <label>Dịch vụ miễn phí đi kèm</label><br/>
+                            <input
+                                type="number"
+                                value="otherServices"
+                                onChange={handleChange}
+                            />
+                        </div>
+
+
+                        <button className="btn btn-primary" type="submit">Submit</button>
+
+                    </form>
+                )}
+            </Formik>
+        </div>
     )
 }
 export default EditService;

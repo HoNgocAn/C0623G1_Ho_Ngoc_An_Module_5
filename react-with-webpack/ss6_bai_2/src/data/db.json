@@ -9,6 +9,11 @@
       "id": 2,
       "title": "Book two",
       "quantity": "20"
+    },
+    {
+      "id": 3,
+      "title": "Book three",
+      "quantity": "30"
     }
   ]
 }

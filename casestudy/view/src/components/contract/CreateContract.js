@@ -27,7 +27,6 @@ function CreateContract(){
             <Field type="text" className="form-control" id="totalMoney"/>
         </div>
 
-
         <button type="submit" className="btn btn-primary">Thêm mới</button>
     </form>
     </>

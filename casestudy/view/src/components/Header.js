@@ -1,15 +1,17 @@
 import React from "react";
+import logo from "../img/logo.png";
+import widget from "../img/widget.png";
 
 function Header(){
     return (
-        <>
+        <div className="container">
             <header>
                 <div className="row">
                     <div className="col-12 col-lg-3">
-                        <img src="../../img/logo@2x.png" alt="Không hiển thị được"/>
+                        <img src={logo} alt="Không hiển thị được"/>
                     </div>
                     <div className="col-12 col-lg-3">
-                        <img src="../../img/widget-tripadvisor-logo.png" alt="Không hiển thị được"/>
+                        <img src={widget} alt="Không hiển thị được"/>
                     </div>
                     <div className="col-12 col-lg-3">
                         <p>
@@ -24,7 +26,7 @@ function Header(){
                     </div>
                 </div>
             </header>
-        </>
+        </div>
     )
 }
 export default Header;

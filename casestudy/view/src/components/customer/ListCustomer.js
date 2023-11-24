@@ -40,7 +40,7 @@ function ListCustomer(){
         <>
         <div className="container">
             <h2>Danh sách khách hàng</h2>
-            <table className="table">
+            <table className="table table-success table-striped">
                 <thead>
                 <tr>
                     <th scope="col">STT</th>
