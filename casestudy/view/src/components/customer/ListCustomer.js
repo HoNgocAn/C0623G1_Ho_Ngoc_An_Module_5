@@ -1,45 +1,50 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+import * as customerMethod from "../../method/CustomerMethod";
+import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
+
+
 
 function ListCustomer(){
-    const customer = [
-        {
-            id: 1,
-            name: "Lê Văn A",
-            birthday: "10/01/2000",
-            gender: "Nam",
-            idCard: "045123456123",
-            numberPhone: "0978666543",
-            email: "lva@123",
-            typeGuest: "Member",
-            address: "Đà Nẵng",
-        },
-        {
-            id: 2,
-            name: "Lê Văn B",
-            birthday: "01/01/2001",
-            gender: "Nam",
-            idCard: "045123098786",
-            numberPhone: "0986776544",
-            email: "lvb@456",
-            typeGuest: "Member",
-            address: "Hà Nội",
-        },
-        {
-            id: 3,
-            name: "Trần Thị C",
-            birthday: "01/01/2002",
-            gender: "Nữ",
-            idCard: "047443558786",
-            numberPhone: "0935776354",
-            email: "ttc@123",
-            typeGuest: "Diamond",
-            address: "Sài Gòn",
-        },
-    ];
+
+    const [customer , setCustomer] = useState([]);
+    const [customerDelete, setCustomerDelete] = useState([])
+
+    useEffect(() => {
+        getAll();
+    }, []);
+
+    const getAll = async () => {
+        let data = await customerMethod.getAllCustomers();
+        setCustomer(data);
+    }
+    const handlerCustomer = (customer) => {
+        setCustomerDelete(customer);
+    };
+    const deleteCustomer = async () => {
+        const isSuccess = await customerMethod.deleteCustomer(customerDelete.id);
+        if (isSuccess) {
+            toast.error("Đã xóa thành công!!!!!");
+            getAll();
+        }
+    };
+    if (!customer) {
+        return null;
+    }
+
     return (
-        <>
         <div className="container">
-            <h2>Danh sách khách hàng</h2>
+            <h2>Danh sách khách hàng</h2><br/>
+            <div className="text-end fst-italic">
+                <Link
+                    class="nav-link active"
+                    className="btn btn-success mb-3"
+                    aria-current="page"
+                    to="/customer-create"
+                >
+                    Thêm khách hàng
+                </Link>
+            </div>
             <table className="table table-success table-striped">
                 <thead>
                 <tr>
@@ -69,14 +74,66 @@ function ListCustomer(){
                     <td>{item.address}</td>
                     <td>
                         <button type="button" className="btn btn-primary" onClick="editService()">Sửa</button>
-                        <button type="button" className="btn btn-danger" onClick="">Xóa</button>
+                        <button
+                            type="button"
+                            data-bs-toggle="modal"
+                            data-bs-target="#exampleModal"
+                            className="btn btn-sm btn-danger rounded-0"
+                            onClick={() => handlerCustomer(item)}
+                        >
+                            Xóa
+                        </button>
                     </td>
                 </tr>
                 )};
                 </tbody>
             </table>
+            <div
+                className="modal fade"
+                id="exampleModal"
+                tabIndex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+            >
+                <div className="modal-dialog">
+                    <div className="modal-content text-center">
+                        <div className="modal-header justify-content-center">
+                            <div>
+                                <h1
+                                    className="modal-title text-danger fs-4"
+                                    id="exampleModalLabel"
+                                >
+                                    Xóa khách hàng
+                                </h1>
+                                <h5 className="modal-title text-danger fw-bold">
+                                </h5>
+                            </div>
+                        </div>
+                        <div className="modal-body">
+                            <h5>Bạn có chắc chắn xóa khách hàng {customerDelete.name} không?</h5>
+                            Hành dộng này không thể hoàn tác!
+                        </div>
+                        <div className="modal-footer">
+                            <button
+                                type="button"
+                                className="btn btn-sm btn-secondary rounded-0"
+                                data-bs-dismiss="modal"
+                            >
+                                Đóng
+                            </button>
+                            <button
+                                type="button"
+                                className="btn btn-sm btn-danger rounded-0"
+                                data-bs-dismiss="modal"
+                                onClick={deleteCustomer}
+                            >
+                                Xác nhận
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        </>
     )
 }
 export default ListCustomer;

@@ -1,10 +1,10 @@
 import React from "react";
 import "./App.css";
-import Selector from "./components/Selector";
+import ListPerson from "./components/ListPerson";
 
 function App() {
     return (
-        <Selector/>
+        <ListPerson/>
     )
 }
 

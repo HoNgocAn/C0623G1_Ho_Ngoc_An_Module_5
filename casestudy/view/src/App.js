@@ -9,6 +9,10 @@ import ListCustomer from "./components/customer/ListCustomer";
 import ListService from "./components/service/ListService";
 import ListContract from "./components/contract/ListContract";
 import Home from "./components/home/Home";
+import CreateCustomer from "./components/customer/CreateCustomer";
+import CreateService from "./components/service/CreateService";
+import CreateContract from "./components/contract/CreateContract";
+
 
 
 function App() {
@@ -44,7 +48,7 @@ function App() {
                                   <svg className="bi d-block mx-auto mb-1" width="24" height="24">
 
                                   </svg>
-                                  GIỚI THIỆU
+                                  <Link to="/">TRANG CHỦ</Link>
                               </a>
                           </li>
                           <li>
@@ -80,6 +84,9 @@ function App() {
               <Route path="/customer" element={<ListCustomer/>} />
               <Route path="/service" element={<ListService/>} />
               <Route path="/contract" element={<ListContract />} />
+              <Route path="/customer-create" element={<CreateCustomer/>} />
+              <Route path="/service-create" element={<CreateService/>} />
+              <Route path="/contract-create" element={<CreateContract/>} />
           </Routes>
           <footer>
               <div className="container">

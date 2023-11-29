@@ -21,17 +21,6 @@
       "email": "lvb@456",
       "typeGuest": "Member",
       "address": "Hà Nội"
-    },
-    {
-      "id": 3,
-      "name": "Trần Thị C",
-      "birthday": "01/01/2002",
-      "gender": "Nữ",
-      "idCard": "047443558786",
-      "numberPhone": "0935776354",
-      "email": "ttc@123",
-      "typeGuest": "Diamond",
-      "address": "Sài gòn"
     }
   ],
   "service": [
@@ -77,28 +66,36 @@
   ],
   "contract": [
     {
-      "id" : 1,
-      "number" : 1,
+      "id": 1,
+      "number": 1,
       "startDay": "01/01/2022",
       "endDay": "01/02/2022",
       "deposit": 1000000,
       "totalMoney": 3000000
     },
     {
-      "id" : 2,
-      "number" : 2,
+      "id": 2,
+      "number": 2,
       "startDay": "05/01/2022",
       "endDay": "05/02/2022",
       "deposit": 1500000,
       "totalMoney": 4000000
     },
     {
-      "id" : 3,
-      "number" : 3,
+      "id": 3,
+      "number": 3,
       "startDay": "10/02/2022",
       "endDay": "20/02/2022",
       "deposit": 1200000,
       "totalMoney": 2500000
+    },
+    {
+      "number": 4,
+      "startDay": "2022-01-01",
+      "endDay": "2023-01-01",
+      "deposit": "1000000",
+      "totalMoney": "2000000",
+      "id": 4
     }
   ]
 }

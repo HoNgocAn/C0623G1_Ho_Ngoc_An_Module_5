@@ -1,184 +1,186 @@
 import React, {useState} from "react";
-import {Formik} from "formik";
+import { useNavigate } from "react-router-dom";
+import * as customerMethod from "../../method/CustomerMethod";
+import {toast} from "react-toastify";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as yup from "yup";
 
 function CreateCustomer(){
 
-    const [form, setForm] = useState({})
-
-    function handleChange(event) {
-        setForm({
-            ...form,
-            [event.target.name]: event.target.value
-        });
+    const navigate = useNavigate();
+    const initValue = {
+        name: "",
+        birthDay: "",
+        gender: 0,
+        idCard:"",
+        numberPhone:"",
+        email: "",
+        typeGuest: "",
+        address:""
     }
-
-    function handleValidate() {
-        const errors = {};
-        if (!form.name) {
-            errors.name = "Không được để trống";
+    const validateForm = {
+        name : yup.string().required("Không được để trống trường này *"),
+        birthDay : yup.string().required("Không được để trống trường này *"),
+        idCard : yup.string().required("Không được để trống trường này *"),
+        numberPhone : yup.string().required("Không được để trống trường này *"),
+        email : yup.string().required("Không được để trống trường này *"),
+        address : yup.string().required("Không được để trống trường này *"),
+    };
+    const createCustomer = (customer) => {
+        let isSuccess = customerMethod.saveCustomer(customer);
+        if (isSuccess) {
+            toast.success("Thêm mới thành công!!!!!");
+            navigate("/customer");
         }
-        if (!form.birthday) {
-            errors.birthday = "Không được để trống";
-        }
-        if (!form.gender) {
-            errors.gender = "Không được để trống";
-        }
-        if (!form.idCard) {
-            errors.idCard = "Không được để trống";
-        }
-        if (!form.numberPhone) {
-            errors.numberPhone = "Không được để trống";
-        }
-        if (!form.email) {
-            errors.email = "Không được để trống";
-        }
-        if (!form.typeGuest) {
-            errors.typeGuest = "Không được để trống";
-        }
-        if (!form.address) {
-            errors.address = "Không được để trống";
-        }
-        return errors
-    }
-
-    function handleSubmit() {
-        alert("Đã thêm mới thành công")
-    }
-
+        console.log("thêm mới thất bại!!!");
+    };
     return (
-        <div>
-            <h1>Thêm mới khách hàng</h1>
-            <Formik
-                initialValues={form}
-                validate={handleValidate}
-                onSubmit={handleSubmit}>
-                {({errors, handleSubmit}) => (
-                    <form onSubmit={handleSubmit}>
-                        <div
-                            className={`custom-input ${
-                                errors.name ? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Tên</label><br></br>
-                            <input
-                                type="text"
+        <>
+            <div className="container" style={{ marginTop: "6rem" }}>
+                <h3 className="mt-3">Thêm khách hàng</h3>
+                <Formik initialValues={initValue}
+                        onSubmit={(values)=>{
+                            createCustomer(values);
+                        }}
+                        validationSchema={yup.object(validateForm)}>
+                    <Form>
+                        <div className="mb-3">
+                            <label htmlFor="name" className="form-label">
+                                Họ tên<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field type="text" name="name" className="form-control" id="name" />
+                            <ErrorMessage
                                 name="name"
-                                value={form.name || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.name}</p>
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
-
-                        <div
-                            className={`custom-input ${
-                                errors.birthday ? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Ngày sinh</label><br></br>
-                            <input
-                                type="date"
-                                name="birthday"
-                                value={form.birthday || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.birthday}</p>
+                        <div className="mb-3">
+                            <label htmlFor="birthDay"  className="form-label">
+                                Ngày sinh<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field type="date" name="birthDay" className="form-control" id="date" />
+                            <ErrorMessage
+                                name="birthDay"
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
-
-                        <div
-                            className={`custom-input ${
-                                errors.gender ? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Giới tính</label><br></br>
-                            <input
-                                type="text"
-                                name="gender"
-                                value={form.gender || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.gender}</p>
+                        <div className="mb-3">
+                            <label htmlFor="inputTool" className="form-label">
+                                Giới tính
+                            </label>
+                            <div className="form-check form-check-inline">
+                                <Field
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    id="inlineRadio1"
+                                    value="1"
+                                    checked
+                                />
+                                <label className="form-check-label" htmlFor="inlineRadio1">
+                                    Nam
+                                </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <Field
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    id="inlineRadio2"
+                                    value="0"
+                                />
+                                <label className="form-check-label" htmlFor="inlineRadio2">
+                                    Nữ
+                                </label>
+                            </div>
+                            <div className="form-check form-check-inline">
+                                <Field
+                                    className="form-check-input"
+                                    type="radio"
+                                    name="gender"
+                                    id="inlineRadio2"
+                                    value="1"
+                                />
+                                <label className="form-check-label" htmlFor="inlineRadio2">
+                                    Khác
+                                </label>
+                            </div>
                         </div>
-
-                        <div
-                            className={`custom-input ${
-                                errors.idCard ? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Số đinh danh cá nhân</label><br></br>
-                            <input
-                                type="text"
+                        <div className="mb-3">
+                            <label htmlFor="inputIdCard" className="form-label">
+                                Số định danh<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field type="text" name="idCard" className="form-control" id="inputIdCard" />
+                            <ErrorMessage
                                 name="idCard"
-                                value={form.idCard || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.idCard}</p>
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
 
-                        <div
-                            className={`custom-input ${
-                                errors.numberPhone ? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Số điện thoại</label><br></br>
-                            <input
-                                type="text"
+                        <div className="mb-3">
+                            <label htmlFor="inputPhoneNumber" className="form-label">
+                                Số Điện Thoại<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field type="text" name="numberPhone" className="form-control" id="inputPhoneNumber" />
+                            <ErrorMessage
                                 name="numberPhone"
-                                value={form.numberPhone || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.numberPhone}</p>
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
 
-                        <div
-                            className={`custom-input ${
-                                errors.email? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Email</label><br></br>
-                            <input
-                                type="email"
+                        <div className="mb-3">
+                            <label htmlFor="inputEmail" className="form-label">
+                                Email<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field type="text" name="email" className="form-control" id="inputEmail" />
+                            <ErrorMessage
                                 name="email"
-                                value={form.email || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.email}</p>
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
-
-                        <div
-                            className={`custom-input ${
-                                errors.typeGuest? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Loại khách hàng</label><br></br>
-                            <input
-                                type="text"
-                                name="typeGuest"
-                                value={form.email || ""}
-                                onChange={handleChange}
-                            />
-                            <p className="error">{errors.typeGuest}</p>
+                        <div className="mb-3">
+                            <label htmlFor="typeCustomer" className="form-label">
+                                Loại khách<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field
+                                className="form-select"
+                                name="typeCustomer" component="select"
+                                aria-label="Default select example"
+                            >
+                                <option selected="">Chọn loại khách</option>
+                                <option value="1">Dinamond</option>
+                                <option value="2">Thường</option>
+                                <option value="3">None</option>
+                            </Field>
                         </div>
-
-                        <div
-                            className={`custom-input ${
-                                errors.address? "custom-input-error" : ""
-                            }`}
-                        >
-                            <label>Địa chỉ</label><br></br>
-                            <input
+                        <div className="mb-3">
+                            <label htmlFor="inputAddress" className="form-label">
+                                Địa chỉ<span style={{ color: "red" }}>(*)</span>
+                            </label>
+                            <Field
                                 type="text"
                                 name="address"
-                                value={form.address || ""}
-                                onChange={handleChange}
+                                className="form-control"
+                                id="inputAddress"
                             />
-                            <p className="error">{errors.address}</p>
+                            <ErrorMessage
+                                name="address"
+                                component="span"
+                                className="err-name"
+                            ></ErrorMessage>
                         </div>
-                        <button className="btn btn-primary" type="submit">Submit</button>
-
-                    </form>
-                )}
-            </Formik>
-        </div>
-    )
+                        <button type="submit" className="btn btn-primary">
+                            Xác nhận
+                        </button>
+                    </Form>
+                </Formik>
+            </div>
+        </>
+    );
 }
 export default CreateCustomer;
